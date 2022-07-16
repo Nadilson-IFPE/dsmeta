@@ -84,7 +84,12 @@ function SalesCard() {
                   <td>{sale.sellerName}</td>
                   <td className="show992">{sale.visited}</td>
                   <td className="show992">{sale.deals}</td>
-                  <td>R$ {sale.amount.toFixed(2)}</td>
+                  <td>
+                    {sale.amount.toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    })}
+                  </td>
                   <td>
                     <div className="dsmeta-red-btn-container">
                       <NotificationButton saleId={sale.id} />
